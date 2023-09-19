@@ -9,10 +9,9 @@ CREATE TABLE `assignment_12`.`customers` (
   PRIMARY KEY (`customer_id`));
   
 CREATE TABLE `assignment_12`.`pizzas` (
-  `pizza_id` INT NOT NULL,
-  `pizza_name` VARCHAR(20) NOT NULL,
+  `pizza_name` VARCHAR(30) NOT NULL,
   `price` DECIMAL(4, 2) NOT NULL,
-  PRIMARY KEY (`pizza_id`));
+  PRIMARY KEY (`pizza_name`));
   
 CREATE TABLE `assignment_12`.`orders`(
   `order_id` INT NOT NULL AUTO_INCREMENT,
@@ -27,7 +26,7 @@ CREATE TABLE `assignment_12`. `customers_orders` (
     );
     
 CREATE TABLE `assignment_12`. `pizzas_orders` (
-    `pizza_name` VARCHAR(20) NOT NULL,
+    `pizza_name` VARCHAR(30) NOT NULL,
     `order_id` INT NOT NULL,
 	FOREIGN KEY (pizza_name) REFERENCES pizzas (pizza_name),
     FOREIGN KEY (order_id) REFERENCES orders (order_id)
